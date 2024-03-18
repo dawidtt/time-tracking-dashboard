@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Time tracking dashboard</title>
+  </head>
+  <body>
+    <div id="desktop-grid">
+      <div id="user-container">
+        <div id="user-top">
+          <img src="./images/image-jeremy.png" alt="image-jeremy" />
+          <div id="user-name-text">
+            <p>Report for</p>
+
+            <h2>Jeremy Robson</h2>
+          </div>
+        </div>
+        <div id="user-bottom">
+          <button onclick="clickedButton(0)" id="daily-btn">Daily</button>
+          <button onclick="clickedButton(1)" id="weekly-btn" class="active">
+            Weekly
+          </button>
+          <button onclick="clickedButton(2)" id="monthly-btn">Monthly</button>
+        </div>
+      </div>
+      <div id="work-report" class="report-data-container">
+        <div class="data">
+          <div class="top-data">
+            <p class="report-name">Work</p>
+            <button>
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="bottom-data">
+            <p class="current-timeframe">32hrs</p>
+            <p class="previous-timeframe">Previous - 36hrs</p>
+          </div>
+        </div>
+      </div>
+      <div id="play-report" class="report-data-container">
+        <div class="data">
+          <div class="top-data">
+            <p class="report-name">Play</p>
+            <button class="report-btn">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="bottom-data">
+            <p class="current-timeframe">10hrs</p>
+            <p class="previous-timeframe">Previous - 8hrs</p>
+          </div>
+        </div>
+      </div>
+      <div id="study-report" class="report-data-container">
+        <div class="data">
+          <div class="top-data">
+            <p class="report-name">Study</p>
+            <button>
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="bottom-data">
+            <p class="current-timeframe">4hrs</p>
+            <p class="previous-timeframe">Previous - 7hrs</p>
+          </div>
+        </div>
+      </div>
+      <div id="exercise-report" class="report-data-container">
+        <div class="data">
+          <div class="top-data">
+            <p class="report-name">Exercise</p>
+            <button>
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="bottom-data">
+            <p class="current-timeframe">4hrs</p>
+            <p class="previous-timeframe">Previous - 5hrs</p>
+          </div>
+        </div>
+      </div>
+      <div id="social-report" class="report-data-container">
+        <div class="data">
+          <div class="top-data">
+            <p class="report-name">Social</p>
+            <button>
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="bottom-data">
+            <p class="current-timeframe">5hrs</p>
+            <p class="previous-timeframe">Previous - 10hrs</p>
+          </div>
+        </div>
+      </div>
+      <div id="self-care-report" class="report-data-container">
+        <div class="data">
+          <div class="top-data">
+            <p class="report-name">Self Care</p>
+            <button>
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="bottom-data">
+            <p class="current-timeframe">2hrs</p>
+            <p class="previous-timeframe">Previous - 2hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

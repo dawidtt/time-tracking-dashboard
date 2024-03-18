@@ -1,0 +1,291 @@
+/*
+=========================
+        VARIABLES
+=========================
+*/
+:root {
+  --blue: #5847eb;
+  --light-red-work: #ff8c66;
+  --soft-blue-play: #56c2e6;
+  --light-red-study: #ff5c7c;
+  --lime-green-exercise: #4acf81;
+  --violet-social: #7536d3;
+  --soft-orange-self-care: #f1c65b;
+  --very-dark-blue: #0f1424;
+  --dark-blue: #1c1f4a;
+  --desaturated-blue: #6f76c8;
+  --pale-blue: #bdc1ff;
+  --small-bold: 300;
+  --medium-bold: 400;
+  --large-bold: 500;
+}
+/*
+=========================
+        SHARED CSS
+=========================
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  background-color: var(--very-dark-blue);
+}
+#desktop-grid {
+  padding: 60px 25px;
+}
+/*
+=========================
+    USER CONTAINER
+=========================
+*/
+#user-container {
+  border-radius: 10px;
+  background-color: var(--dark-blue);
+  overflow: hidden;
+}
+/*
+=========================
+        USER TOP
+=========================
+*/
+#user-top {
+  background-color: var(--blue);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 25px 0;
+}
+#user-top p {
+  color: var(--pale-blue);
+}
+#user-top h2 {
+  color: #fafafa;
+  font-weight: var(--small-bold);
+}
+#user-top img {
+  width: 80px;
+  border: 3px solid #ffffff;
+  border-radius: 100%;
+}
+/*
+=========================
+    USER BOTTOM
+=========================
+*/
+#user-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+#user-bottom button {
+  background: transparent;
+  border: none;
+  color: var(--desaturated-blue);
+  font-size: 1.1rem;
+  transition: color 0.15s;
+}
+
+/*
+=========================
+  REPORT DATA CONTAINER
+=========================
+*/
+.report-data-container {
+  display: flex;
+  align-items: end;
+  border-radius: 10px;
+  margin: 20px 0;
+  background-repeat: no-repeat;
+  background-position: 95% -5px;
+  backface-visibility: visible;
+  overflow: hidden;
+}
+.data {
+  background-color: var(--dark-blue);
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 30px 20px;
+  margin-top: 12%;
+  transition: filter 0.2s;
+}
+
+.top-data,
+.bottom-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-data {
+  margin-top: 15px;
+}
+.report-name {
+  font-weight: var(--large-bold);
+  color: #fafafafa;
+}
+.top-data button {
+  background: transparent;
+  border: none;
+}
+
+.current-timeframe {
+  font-weight: var(--small-bold);
+  font-size: 2rem;
+  color: #fafafa;
+}
+.previous-timeframe {
+  color: var(--pale-blue);
+}
+/*
+=========================
+INDIVIDUAL BACKGROUND IMG
+=========================
+*/
+#work-report {
+  background-image: url(./images/icon-work.svg);
+  background-color: var(--light-red-work);
+}
+#play-report {
+  background-image: url(./images/icon-play.svg);
+  background-color: var(--soft-blue-play);
+}
+#study-report {
+  background-image: url(./images/icon-study.svg);
+  background-color: var(--light-red-study);
+}
+#exercise-report {
+  background-image: url(./images/icon-exercise.svg);
+  background-color: var(--lime-green-exercise);
+}
+#social-report {
+  background-image: url(./images/icon-social.svg);
+  background-color: var(--violet-social);
+}
+#self-care-report {
+  background-image: url(./images/icon-self-care.svg);
+  background-color: var(--soft-orange-self-care);
+}
+/*
+=========================
+      HOVER STATES
+=========================
+*/
+#user-bottom button:hover,
+.data:hover:not(:has(.top-data button:hover)),
+.top-data button:hover {
+  cursor: pointer;
+}
+#user-bottom button:hover,
+#user-bottom button:active,
+.active {
+  color: #fafafafa !important;
+}
+.data:hover:not(:has(.top-data button:hover)) {
+  filter: brightness(140%);
+}
+/*
+=========================
+      BREAKPOINTS
+=========================
+*/
+@media (min-width: 768px) {
+  /*
+=========================
+  CENTER MAIN CONTAINER
+=========================
+*/
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  /*
+=========================
+      DESKTOP GRID
+=========================
+*/
+  #desktop-grid {
+    margin-inline: 2%;
+    display: grid;
+    grid-template: 1fr 1fr / repeat(4, 1fr);
+    gap: 20px;
+  }
+  #user-container {
+    grid-row: 1/3;
+    grid-column: 1/2;
+  }
+  #work-report {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  #play-report {
+    grid-row: 1/2;
+    grid-column: 3/4;
+  }
+  #study-report {
+    grid-row: 1/2;
+    grid-column: 4/5;
+  }
+  #exercise-report {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  #social-report {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+  #self-care-report {
+    grid-row: 2/3;
+    grid-column: 4/5;
+  }
+  .report-data-container {
+    height: 100%;
+    margin: 0;
+  }
+  /*
+=========================
+      USER CONTAINER
+=========================
+*/
+  #user-top {
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 20px;
+    height: 70%;
+  }
+  #user-top h2 {
+    font-size: 2.65rem;
+  }
+  #user-bottom {
+    align-items: start;
+    flex-direction: column;
+    margin: 0;
+    padding: 20px 20px 20px 25px;
+    height: 30%;
+  }
+
+  .data {
+    margin-top: 15%;
+  }
+  .bottom-data {
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
+  .current-timeframe {
+    font-size: 3rem;
+  }
+  .previous-timeframe {
+    font-size: 0.8rem;
+  }
+}
